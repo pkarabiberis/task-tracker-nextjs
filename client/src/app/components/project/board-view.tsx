@@ -3,13 +3,9 @@ import {
   useGetTasksQuery,
   useUpdateTaskStatusMutation,
 } from "@/state/api";
-import {
-  EllipsisVertical,
-  MessageSquare,
-  MessageSquareMore,
-  PlusIcon,
-} from "lucide-react";
-import React from "react";
+import { format } from "date-fns";
+import { EllipsisVertical, MessageSquareMore, PlusIcon } from "lucide-react";
+import Image from "next/image";
 import {
   DndProvider,
   DragSourceMonitor,
@@ -18,8 +14,6 @@ import {
   useDrop,
 } from "react-dnd";
 import { HTML5Backend } from "react-dnd-html5-backend";
-import { format } from "date-fns";
-import Image from "next/image";
 
 type Props = {
   id: string;
