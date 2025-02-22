@@ -24,6 +24,7 @@ import React, { useState } from "react";
 import { useAppDispatch, useAppSelector } from "../redux";
 import Link from "next/link";
 import { setIsSidebarCollapsed } from "@/state";
+import { useGetProjectsQuery } from "@/state/api";
 
 export default function Sidebar() {
   const [showProjects, setShowProjects] = useState(true);
@@ -32,6 +33,7 @@ export default function Sidebar() {
   const { isDarkMode, isSidebarCollapsed } = useAppSelector(
     (state) => state.global,
   );
+  const { data: projects } = useGetProjectsQuery();
   const dispatch = useAppDispatch();
 
   const sidebarClassNamess = `fixed flex flex-col h-[100%] justify-between shadow-xl
@@ -91,6 +93,16 @@ export default function Sidebar() {
             <ChevronDown className="h-5 w-5" />
           )}
         </button>
+
+        {showProjects &&
+          projects?.map((project) => (
+            <SidebarLink
+              key={project.id}
+              icon={Briefcase}
+              label={project.name}
+              href={`/projects/${project.id}`}
+            />
+          ))}
 
         <button
           onClick={() => setShowPriority((prev) => !prev)}
