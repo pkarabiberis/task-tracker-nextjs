@@ -18,3 +18,42 @@ body,
   @apply bg-white;
   @apply dark:bg-black;
 }
+
+/* Timeline style overrides */
+._wrapper_1sr1d_54 {
+  @apply grid-cols-none border-none dark:bg-dark-tertiary !important;
+}
+
+._calendarMain_14og3_1,
+._ganttTableWrapper_v4xjz_8,
+._ganttTaskContent_1sr1d_41 {
+  @apply w-full !important;
+}
+
+._taskListWrapper_yx1w7_1 ._taskListCell_w35p0_15:nth-child(even) {
+  @apply dark:bg-dark-tertiary !important;
+}
+
+._taskListContent_v4xjz_64 div {
+  @apply dark:bg-none !important;
+}
+
+._ganttTaskContent_1sr1d_41 {
+  @apply overflow-x-visible overflow-y-visible !important;
+}
+
+._ganttTaskContent_1sr1d_41 svg {
+  @apply bg-transparent !important;
+}
+
+._taskListTableRow_w35p0_1 {
+  @apply dark:bg-dark-tertiary !important;
+}
+
+._taskListResizer_v4xjz_40 {
+  @apply hidden !important;
+}
+
+._ganttTableRoot_v4xjz_1 {
+  @apply border-none !important;
+}
